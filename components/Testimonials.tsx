@@ -23,13 +23,13 @@ const testimonials = [
 
 export default function Testimonials() {
   return (
-    <section id="recenzije" className="py-24 bg-[#000355]">
+    <section id="recenzije" className="py-24 bg-accent">
       <div className="max-w-7xl mx-auto px-4">
         <div className="text-center mb-16">
-          <span className="inline-block bg-accent text-primary text-sm font-bold px-4 py-1 rounded-full uppercase tracking-widest mb-4">
+          <span className="inline-block bg-primary text-accent text-sm font-bold px-4 py-1 rounded-full uppercase tracking-widest mb-4">
             Iskustva klijenata
           </span>
-          <h2 className="text-3xl md:text-5xl font-black text-accent mb-4">
+          <h2 className="text-3xl md:text-5xl font-black text-primary mb-4">
             Šta kažu naši klijenti
           </h2>
           <p className="text-white text-lg max-w-xl mx-auto">
@@ -39,19 +39,16 @@ export default function Testimonials() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {testimonials.map(({ text, name, location }) => (
-            <div
-              key={name}
-              className="bg-primary rounded-2xl p-6 flex flex-col gap-4"
-            >
+            <div key={name} className="bg-primary rounded-2xl p-6 flex flex-col gap-4">
               <div className="flex gap-1">
                 {Array.from({ length: 5 }).map((_, i) => (
                   <StarIcon key={i} />
                 ))}
               </div>
-              <p className="text-white/85 leading-relaxed flex-1">"{text}"</p>
+              <p className="text-white/85 leading-relaxed flex-1">&ldquo;{text}&rdquo;</p>
               <div className="border-t border-white/10 pt-4">
                 <div className="font-bold text-accent">{name}</div>
-                <div className="text-white/50 text-sm">{location}</div>
+                <div className="text-white/80 text-sm">{location}</div>
               </div>
             </div>
           ))}
