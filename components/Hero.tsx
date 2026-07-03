@@ -1,5 +1,6 @@
 import Image from "next/image";
-import { PHONE, PHONE_HREF } from "@/lib/constants";
+import { PHONE } from "@/lib/constants";
+import PhoneLink from "./PhoneLink";
 
 const features = [
   { icon: "🚗", text: "Sva putnička vozila" },
@@ -39,13 +40,10 @@ export default function Hero() {
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
-          <a
-            href={PHONE_HREF}
-            className="flex items-center gap-3 bg-accent hover:bg-accent-hover text-primary font-black text-2xl md:text-3xl px-8 py-4 rounded-xl shadow-2xl shadow-accent/20 transition-all hover:scale-105 active:scale-100"
-          >
+          <PhoneLink className="flex items-center gap-3 bg-accent hover:bg-accent-hover text-primary font-black text-2xl md:text-3xl px-8 py-4 rounded-xl shadow-2xl shadow-accent/20 transition-all hover:scale-105 active:scale-100">
             <PhoneIcon className="w-7 h-7" />
             {PHONE}
-          </a>
+          </PhoneLink>
           <a
             href="#usluge"
             className="flex items-center gap-2 border-2 border-white/30 hover:border-accent text-white hover:text-accent font-semibold px-6 py-4 rounded-xl transition-colors"

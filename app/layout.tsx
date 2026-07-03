@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 import { SITE_NAME, SITE_URL, PHONE } from "@/lib/constants";
+import { GOOGLE_ADS_ID } from "@/lib/gtag";
 
 const inter = Inter({
   subsets: ["latin", "latin-ext"],
@@ -29,6 +31,33 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="sr">
       <body className={inter.className}>
+        <Script
+          src={`https://www.googletagmanager.com/gtag/js?id=${GOOGLE_ADS_ID}`}
+          strategy="afterInteractive"
+        />
+        <Script id="gtag-init" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${GOOGLE_ADS_ID}');
+
+            window.gtag_report_conversion = function(url) {
+              var callback = function () {
+                if (typeof(url) != 'undefined') {
+                  window.location = url;
+                }
+              };
+              gtag('event', 'conversion', {
+                  'send_to': '${GOOGLE_ADS_ID}/iNDaCJfvrMocENm32YRD',
+                  'value': 1.0,
+                  'currency': 'RSD',
+                  'event_callback': callback
+              });
+              return false;
+            }
+          `}
+        </Script>
         {children}
       </body>
     </html>

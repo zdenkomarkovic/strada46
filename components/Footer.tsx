@@ -1,5 +1,6 @@
 import Image from "next/image";
-import { PHONE, PHONE_HREF, ADDRESS, SITE_NAME } from "@/lib/constants";
+import { PHONE, ADDRESS, SITE_NAME } from "@/lib/constants";
+import PhoneLink from "./PhoneLink";
 
 const navLinks = [
   { href: "/", label: "Početna" },
@@ -54,13 +55,10 @@ export default function Footer() {
           <div>
             <h3 className="text-slate-300 font-bold mb-4">Kontakt</h3>
             <div className="space-y-3">
-              <a
-                href={PHONE_HREF}
-                className="flex items-center gap-2 text-slate-400 hover:text-accent transition-colors text-sm"
-              >
+              <PhoneLink className="flex items-center gap-2 text-slate-400 hover:text-accent transition-colors text-sm">
                 <PhoneIcon />
                 {PHONE}
-              </a>
+              </PhoneLink>
               <div className="flex items-center gap-2 text-slate-500 text-sm">
                 <LocationIcon />
                 {ADDRESS}

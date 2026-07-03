@@ -3,7 +3,8 @@
 import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { PHONE, PHONE_HREF } from "@/lib/constants";
+import { PHONE } from "@/lib/constants";
+import PhoneLink from "./PhoneLink";
 
 const navLinks = [
   { href: "/", label: "Početna" },
@@ -45,22 +46,16 @@ export default function Header() {
           ))}
         </nav>
 
-        <a
-          href={PHONE_HREF}
-          className="hidden lg:flex items-center gap-2 bg-accent hover:bg-accent-hover text-primary font-bold px-4 py-2 rounded-lg text-sm transition-colors"
-        >
+        <PhoneLink className="hidden lg:flex items-center gap-2 bg-accent hover:bg-accent-hover text-primary font-bold px-4 py-2 rounded-lg text-sm transition-colors">
           <PhoneIcon />
           {PHONE}
-        </a>
+        </PhoneLink>
 
         <div className="flex lg:hidden items-center gap-2">
-          <a
-            href={PHONE_HREF}
-            className="flex items-center gap-2 bg-accent hover:bg-accent-hover text-primary font-bold px-3 py-2 rounded-lg text-xs transition-colors"
-          >
+          <PhoneLink className="flex items-center gap-2 bg-accent hover:bg-accent-hover text-primary font-bold px-3 py-2 rounded-lg text-xs transition-colors">
             <PhoneIcon />
             <span>{PHONE}</span>
-          </a>
+          </PhoneLink>
           <button
             className="text-primary p-2 rounded-lg hover:bg-primary/10 transition-colors"
             onClick={() => setOpen(!open)}
@@ -83,13 +78,10 @@ export default function Header() {
               {label}
             </a>
           ))}
-          <a
-            href={PHONE_HREF}
-            className="flex items-center justify-center gap-2 bg-accent hover:bg-accent-hover text-primary font-bold py-3 rounded-lg mt-2 transition-colors"
-          >
+          <PhoneLink className="flex items-center justify-center gap-2 bg-accent hover:bg-accent-hover text-primary font-bold py-3 rounded-lg mt-2 transition-colors">
             <PhoneIcon />
             {PHONE}
-          </a>
+          </PhoneLink>
         </div>
       )}
     </header>

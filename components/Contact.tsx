@@ -1,4 +1,5 @@
 import { PHONE, PHONE_HREF, ADDRESS, MAPS_URL } from "@/lib/constants";
+import PhoneLink from "./PhoneLink";
 
 const contactItems = [
   {
@@ -39,13 +40,10 @@ export default function Contact() {
         </div>
 
         <div className="flex justify-center mb-14">
-          <a
-            href={PHONE_HREF}
-            className="flex items-center gap-4 bg-primary hover:bg-primary-dark text-white font-black text-3xl md:text-4xl px-10 py-5 rounded-2xl shadow-2xl transition-colors"
-          >
+          <PhoneLink className="flex items-center gap-4 bg-primary hover:bg-primary-dark text-white font-black text-3xl md:text-4xl px-10 py-5 rounded-2xl shadow-2xl transition-colors">
             <PhoneIcon className="w-9 h-9" />
             {PHONE}
-          </a>
+          </PhoneLink>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
@@ -58,7 +56,11 @@ export default function Contact() {
                 <Icon className="w-6 h-6 text-[#000228]" />
               </div>
               <div className="text-[#000355] text-sm font-medium mb-1">{label}</div>
-              {href ? (
+              {href === PHONE_HREF ? (
+                <PhoneLink className="text-[#000228] font-bold text-lg hover:text-primary transition-colors">
+                  {value}
+                </PhoneLink>
+              ) : href ? (
                 <a href={href} className="text-[#000228] font-bold text-lg hover:text-primary transition-colors">
                   {value}
                 </a>

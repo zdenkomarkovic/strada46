@@ -1,4 +1,5 @@
 import MapWrapper from "./MapWrapper";
+import PhoneLink from "./PhoneLink";
 
 const areas = [
   {
@@ -94,13 +95,10 @@ export default function ServiceArea() {
           <p className="text-white/75 mb-6">
             Pozovite nas — dolazimo i šire uz dogovor.
           </p>
-          <a
-            href="tel:+381649200200"
-            className="inline-flex items-center gap-2 bg-accent hover:bg-accent-hover text-primary font-black px-8 py-3 rounded-xl transition-colors"
-          >
+          <PhoneLink className="inline-flex items-center gap-2 bg-accent hover:bg-accent-hover text-primary font-black px-8 py-3 rounded-xl transition-colors">
             <PhoneIcon />
             064/9-200-200
-          </a>
+          </PhoneLink>
         </div>
       </div>
     </section>
