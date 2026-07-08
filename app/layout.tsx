@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     default: SITE_NAME,
     template: `%s | ${SITE_NAME}`,
   },
-  description: `Slep služba Strada 46 — brza pomoć na putu u Beogradu. Šlep, deblokada i prevoz vozila, dostupni 24/7. Pozovite ${PHONE}.`,
+  description: `Slep služba Strada 46 — brza pomoć na putu u Beogradu. Šlep, deblokada, paljenje akumulatora kablovima i dostava goriva, dostupni 24/7. Pozovite ${PHONE}.`,
   openGraph: {
     type: "website",
     locale: "sr_RS",

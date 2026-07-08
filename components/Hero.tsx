@@ -5,8 +5,9 @@ import PhoneLink from "./PhoneLink";
 const features = [
   { icon: "🚗", text: "Sva putnička vozila" },
   { icon: "⚡", text: "Dolazak ~30 min" },
+  { icon: "🔋", text: "Paljenje akumulatora" },
+  { icon: "⛽", text: "Dostava goriva" },
   { icon: "📍", text: "Beograd i okolina" },
-  { icon: "🔧", text: "Profesionalna oprema" },
 ];
 
 export default function Hero() {
@@ -30,13 +31,16 @@ export default function Hero() {
         </div>
 
         <h1 className="text-5xl md:text-7xl font-black leading-none mb-4 tracking-tight">
-          SLEP SLUŽBA
+          ŠLEP SLUŽBA
           <br />
-          <span className="text-accent">BEOGRAD</span>
+          <span className="text-accent">STRADA 46 </span>
+          <br />
+          BEOGRAD
         </h1>
 
         <p className="text-lg md:text-xl text-white mb-10 max-w-xl mx-auto">
-          Brza i pouzdana pomoć na putu — šlep, deblokada i prevoz vozila. Kumodraz, Beograd.
+          Brza i pouzdana pomoć na putu — šlep, deblokada, paljenje akumulatora kablovima i
+          dostava goriva. Kumodraz, Beograd.
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">

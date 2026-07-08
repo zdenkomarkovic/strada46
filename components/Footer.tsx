@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { PHONE, ADDRESS, SITE_NAME } from "@/lib/constants";
 import PhoneLink from "./PhoneLink";
 
@@ -15,13 +16,19 @@ const navLinks = [
   { href: "#kontakt", label: "Kontakt" },
 ];
 
+const serviceLinks = [
+  { href: "/paljenje-akumulatora-beograd", label: "Paljenje akumulatora kablovima" },
+  { href: "/dostava-goriva-beograd", label: "Donošenje goriva" },
+  { href: "/#usluge", label: "Sve usluge" },
+];
+
 export default function Footer() {
   const year = new Date().getFullYear();
 
   return (
     <footer className="bg-[#00010a] border-t border-primary/30">
       <div className="max-w-7xl mx-auto px-4 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mb-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-10">
           <div>
             <Image
               src="/logo.png"
@@ -47,6 +54,22 @@ export default function Footer() {
                   >
                     {label}
                   </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <h3 className="text-slate-300 font-bold mb-4">Posebne usluge</h3>
+            <ul className="space-y-2">
+              {serviceLinks.map(({ href, label }) => (
+                <li key={href}>
+                  <Link
+                    href={href}
+                    className="text-slate-500 hover:text-accent text-sm transition-colors"
+                  >
+                    {label}
+                  </Link>
                 </li>
               ))}
             </ul>

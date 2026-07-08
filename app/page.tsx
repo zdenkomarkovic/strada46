@@ -1,4 +1,5 @@
 import { buildMetadata } from "@/lib/metadata";
+import { SITE_URL } from "@/lib/constants";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import Stats from "@/components/Stats";
@@ -16,7 +17,7 @@ import Footer from "@/components/Footer";
 export const metadata = buildMetadata({
   title: "Slep Služba Beograd",
   description:
-    "Strada 46 — brza slep služba u Beogradu. Šlep, deblokada i prevoz vozila, dostupni 24/7. Kumodraz, Beograd. Pozovite 064/9-200-200.",
+    "Strada 46 — brza slep služba u Beogradu. Šlep, deblokada, paljenje akumulatora kablovima i dostava goriva, dostupni 24/7. Kumodraz, Beograd. Pozovite 064/9-200-200.",
 });
 
 const localBusinessSchema = {
@@ -50,7 +51,29 @@ const localBusinessSchema = {
   },
   priceRange: "$$",
   description:
-    "Brza i pouzdana slep služba u Beogradu. Šlep, deblokada i prevoz vozila. Dostupni 24/7.",
+    "Brza i pouzdana slep služba u Beogradu. Šlep, deblokada, paljenje akumulatora kablovima i dostava goriva. Dostupni 24/7.",
+  hasOfferCatalog: {
+    "@type": "OfferCatalog",
+    name: "Usluge",
+    itemListElement: [
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "Paljenje akumulatora kablovima",
+          url: `${SITE_URL}/paljenje-akumulatora-beograd`,
+        },
+      },
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "Donošenje goriva",
+          url: `${SITE_URL}/dostava-goriva-beograd`,
+        },
+      },
+    ],
+  },
 };
 
 export default function HomePage() {

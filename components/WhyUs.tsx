@@ -17,7 +17,7 @@ const reasons = [
   {
     icon: TruckIcon,
     title: "Oprema za svaku situaciju",
-    desc: "Šlep vozila, izvlačenje iz blata i snega, prevoz na veće distance — imamo pravu opremu za svaki tip kvara ili udesa.",
+    desc: "Šlep vozila, izvlačenje iz blata i snega, paljenje akumulatora kablovima, dostava goriva, prevoz na veće distance — imamo pravu opremu za svaki tip kvara ili udesa.",
   },
   {
     icon: StarIcon,

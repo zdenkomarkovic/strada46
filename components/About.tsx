@@ -27,7 +27,7 @@ export default function About() {
             <p className="text-slate-400 text-lg leading-relaxed mb-6">
               Strada 46 je slep služba sa sedištem u Kumodražu, Beograd. Pružamo brzu i pouzdanu
               pomoć vozačima kojima je potrebna asistencija na putu — bilo da je u pitanju kvar,
-              udes ili zapinjanje vozila.
+              udes, zapinjanje vozila, ispražnjen akumulator ili nestanak goriva.
             </p>
             <p className="text-slate-400 text-lg leading-relaxed mb-10">
               Naš tim je dostupan 24 sata dnevno, 7 dana u nedelji. Koristimo savremenu opremu i

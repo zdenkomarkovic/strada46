@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 const services = [
   {
     title: "Šlep vozila",
@@ -8,6 +10,18 @@ const services = [
     title: "Deblokada i izvlačenje",
     desc: "Specijalizovani smo za izvlačenje vozila iz blata, snega, peska i nepristupačnih terena. Deblokada je moguća i kada je vozilo u kanalu, jarku ili u nemogućem položaju. Dolazimo opremljeni za svaku situaciju na terenu.",
     icon: WrenchIcon,
+  },
+  {
+    title: "Paljenje akumulatora kablovima",
+    desc: "Ostali ste bez akumulatora usred puta? Dolazimo brzo i pomoćnim kablovima startujemo vaše vozilo na licu mesta. Rešenje za par minuta, bez potrebe za šlepovanjem ili odlaskom u servis.",
+    icon: BatteryIcon,
+    href: "/paljenje-akumulatora-beograd",
+  },
+  {
+    title: "Donošenje goriva",
+    desc: "Ostali ste bez goriva na putu ili auto-putu? Donosimo vam benzin ili dizel direktno na lokaciju kako biste mogli da nastavite vožnju do najbliže pumpe, bez čekanja i nepotrebnog stresa.",
+    icon: FuelIcon,
+    href: "/dostava-goriva-beograd",
   },
   {
     title: "Prevoz vozila na adresu",
@@ -63,21 +77,51 @@ export default function Services() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {services.map(({ title, desc, icon: Icon }) => (
-            <div
-              key={title}
-              className="bg-primary rounded-2xl p-6 hover:scale-[1.02] transition-transform group"
-            >
-              <div className="w-12 h-12 bg-accent/20 rounded-xl flex items-center justify-center mb-5 group-hover:bg-accent/30 transition-colors">
-                <Icon />
+          {services.map(({ title, desc, icon: Icon, href }) => {
+            const cardContent = (
+              <>
+                <div className="w-12 h-12 bg-accent/20 rounded-xl flex items-center justify-center mb-5 group-hover:bg-accent/30 transition-colors">
+                  <Icon />
+                </div>
+                <h3 className="text-accent font-bold text-xl mb-3">{title}</h3>
+                <p className="text-white/65 leading-relaxed">{desc}</p>
+                {href && (
+                  <span className="inline-flex items-center gap-1 text-accent font-semibold text-sm mt-4">
+                    Saznaj više
+                    <ArrowRightIcon />
+                  </span>
+                )}
+              </>
+            );
+
+            return href ? (
+              <Link
+                key={title}
+                href={href}
+                className="block bg-primary rounded-2xl p-6 hover:scale-[1.02] transition-transform group"
+              >
+                {cardContent}
+              </Link>
+            ) : (
+              <div
+                key={title}
+                className="bg-primary rounded-2xl p-6 hover:scale-[1.02] transition-transform group"
+              >
+                {cardContent}
               </div>
-              <h3 className="text-accent font-bold text-xl mb-3">{title}</h3>
-              <p className="text-white/65 leading-relaxed">{desc}</p>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>
+  );
+}
+
+function ArrowRightIcon() {
+  return (
+    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+    </svg>
   );
 }
 
@@ -145,6 +189,26 @@ function ServiceIcon() {
   return (
     <svg className="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z" />
+    </svg>
+  );
+}
+
+function BatteryIcon() {
+  return (
+    <svg className="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 10a1 1 0 011-1h13a1 1 0 011 1v4a1 1 0 01-1 1H4a1 1 0 01-1-1v-4z" />
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 10.5h2v3h-2" />
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 9l-2 3h2l-2 3" />
+    </svg>
+  );
+}
+
+function FuelIcon() {
+  return (
+    <svg className="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 20V6a2 2 0 012-2h5a2 2 0 012 2v14M3 20h11" />
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10h2l3 3v5a1 1 0 01-1 1h-1a1 1 0 01-1-1v-2a1 1 0 00-1-1h-1" />
+      <circle cx="17.5" cy="17.5" r="1" strokeWidth={2} />
     </svg>
   );
 }
