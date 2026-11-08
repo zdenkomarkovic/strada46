@@ -5,14 +5,16 @@ const services = [
     title: "Šlep vozila",
     desc: "Bezbedno šlepujemo sva putnička vozila, kombije i dostavna vozila bez obzira na stanje i uzrok kvara. Koristimo savremenu opremu za utovar koja ne oštećuje karoseriju ni podvozje vašeg automobila. Šlepujemo i vozila koja nisu na neutralu.",
     icon: TruckIcon,
+    href: "/slep-vozila-beograd",
   },
   {
     title: "Deblokada i izvlačenje",
     desc: "Specijalizovani smo za izvlačenje vozila iz blata, snega, peska i nepristupačnih terena. Deblokada je moguća i kada je vozilo u kanalu, jarku ili u nemogućem položaju. Dolazimo opremljeni za svaku situaciju na terenu.",
     icon: WrenchIcon,
+    href: "/deblokada-izvlacenje-vozila-beograd",
   },
   {
-    title: "Paljenje akumulatora kablovima",
+    title: "Paljenje vozila kablovima",
     desc: "Ostali ste bez akumulatora usred puta? Dolazimo brzo i pomoćnim kablovima startujemo vaše vozilo na licu mesta. Rešenje za par minuta, bez potrebe za šlepovanjem ili odlaskom u servis.",
     icon: BatteryIcon,
     href: "/paljenje-akumulatora-beograd",
@@ -27,21 +29,25 @@ const services = [
     title: "Prevoz vozila na adresu",
     desc: "Prevozimo vaše vozilo na bilo koju adresu u Beogradu, Srbiji ili regionu. Ukoliko imate kvar, udes ili vozilo jednostavno ne može samo da se kreće — mi ga bezbedno dopremamo tamo gde treba, uz punu odgovornost za teret.",
     icon: MapIcon,
+    href: "/prevoz-vozila-beograd",
   },
   {
     title: "Prevoz nakon udesa",
     desc: "Posle saobraćajne nesreće vozilo je često neupotrebljivo i mora da se skloni sa puta što pre. Strada 46 pruža brzu i diskretnu evakuaciju vozila sa mesta udesa — na servis, parkipalište ili bilo koju drugu adresu po vašem zahtevu.",
     icon: AlertIcon,
+    href: "/slepovanje-posle-udesa-beograd",
   },
   {
     title: "Odvoz do servisa ili tehničkog",
     desc: "Kvar vas je zatekao, ali ne znate gde da odnesete auto? Šlepujemo vozilo do auto-servisa, vulkanizera, tehničkog pregleda ili registracije na vašu željenu adresu. Brzo, pouzdano i bez gužve.",
     icon: ServiceIcon,
+    href: "/odvoz-vozila-do-servisa-beograd",
   },
   {
     title: "Prevoz na duže relacije",
     desc: "Pored Beograda, obavljamo i prevoz vozila na duže relacije — prema drugim gradovima Srbije i regionu. Idealno za kupovinu polovnog automobila, selidbu vozila ili transport neispravnog auta do udaljenog servisa.",
     icon: RouteIcon,
+    href: "/prevoz-vozila-na-duze-relacije",
   },
   {
     title: "Dostupni 24/7",

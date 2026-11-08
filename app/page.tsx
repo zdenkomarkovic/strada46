@@ -17,7 +17,7 @@ import Footer from "@/components/Footer";
 export const metadata = buildMetadata({
   title: "Slep Služba Beograd",
   description:
-    "Strada 46 — brza slep služba u Beogradu. Šlep, deblokada, paljenje akumulatora kablovima i dostava goriva, dostupni 24/7. Kumodraz, Beograd. Pozovite 064/9-200-200.",
+    "Strada 46 — brza slep služba u Beogradu. Šlep, deblokada, paljenje vozila kablovima i dostava goriva, dostupni 24/7. Kumodraz, Beograd. Pozovite 064/9-200-200.",
 });
 
 const localBusinessSchema = {
@@ -51,7 +51,7 @@ const localBusinessSchema = {
   },
   priceRange: "$$",
   description:
-    "Brza i pouzdana slep služba u Beogradu. Šlep, deblokada, paljenje akumulatora kablovima i dostava goriva. Dostupni 24/7.",
+    "Brza i pouzdana slep služba u Beogradu. Šlep, deblokada, paljenje vozila kablovima i dostava goriva. Dostupni 24/7.",
   hasOfferCatalog: {
     "@type": "OfferCatalog",
     name: "Usluge",
@@ -60,7 +60,7 @@ const localBusinessSchema = {
         "@type": "Offer",
         itemOffered: {
           "@type": "Service",
-          name: "Paljenje akumulatora kablovima",
+          name: "Paljenje vozila kablovima",
           url: `${SITE_URL}/paljenje-akumulatora-beograd`,
         },
       },

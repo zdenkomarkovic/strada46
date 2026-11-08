@@ -5,7 +5,7 @@ import PhoneLink from "./PhoneLink";
 const features = [
   { icon: "🚗", text: "Sva putnička vozila" },
   { icon: "⚡", text: "Dolazak ~30 min" },
-  { icon: "🔋", text: "Paljenje akumulatora" },
+  { icon: "🔋", text: "Paljenje vozila" },
   { icon: "⛽", text: "Dostava goriva" },
   { icon: "📍", text: "Beograd i okolina" },
 ];
@@ -39,7 +39,7 @@ export default function Hero() {
         </h1>
 
         <p className="text-lg md:text-xl text-white mb-10 max-w-xl mx-auto">
-          Brza i pouzdana pomoć na putu — šlep, deblokada, paljenje akumulatora kablovima i
+          Brza i pouzdana pomoć na putu — šlep, deblokada, paljenje vozila kablovima i
           dostava goriva. Kumodraz, Beograd.
         </p>
 

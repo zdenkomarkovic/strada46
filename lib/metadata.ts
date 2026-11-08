@@ -41,7 +41,8 @@ export function buildMetadata({
   const ogImage = image ?? `${SITE_URL}/og-image.png`; // Dodaj og-image.png u /public
 
   return {
-    title: fullTitle,
+    // absolute: sprecava da layout template doda naziv sajta drugi put
+    title: { absolute: fullTitle },
     description,
     metadataBase: new URL(SITE_URL),
     alternates: {

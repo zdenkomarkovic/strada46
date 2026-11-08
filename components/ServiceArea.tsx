@@ -1,4 +1,6 @@
+import Link from "next/link";
 import MapWrapper from "./MapWrapper";
+import { areas as pageAreas, areaPath } from "@/lib/areas";
 import PhoneLink from "./PhoneLink";
 
 const areas = [
@@ -50,6 +52,54 @@ const areas = [
     name: "Medaković",
     desc: "Slep služba za Medaković 1, 2 i 3. Brz dolazak i profesionalna usluga.",
   },
+  {
+    name: "Kumodraž",
+    desc: "Naša baza je u Kumodražu, pa na poziv stižemo za oko 10 minuta. Šlep, deblokada i izvlačenje iz blata.",
+  },
+  {
+    name: "Miljakovac",
+    desc: "Miljakovac 1, 2 i 3. Bezbedno izvlačenje i utovar vozila na nagibu, uz vitlo i dodatno obezbeđenje točkova.",
+  },
+  {
+    name: "Sunčani breg",
+    desc: "Strmi prilazi i uske ulice nisu problem. Biramo vozilo koje može da priđe i izvlačimo auto vitlom.",
+  },
+  {
+    name: "Resnik",
+    desc: "Pomoć radnicima, dostavnim vozilima i vozačima u prolazu. Kratki i dugi prevozi do servisa.",
+  },
+  {
+    name: "Autokomanda",
+    desc: "Kvar na najprometnijoj raskrsnici juga grada? Stižemo brzo, obezbeđujemo mesto i uklanjamo vozilo sa kolovoza.",
+  },
+  {
+    name: "Zvezdara",
+    desc: "Od Bulevara kralja Aleksandra do Zvezdarske šume. Šlep i pomoć na putu u celoj opštini.",
+  },
+  {
+    name: "Centar",
+    desc: "Terazije, Knez Mihailova, Savamala. Šlep u pešačkim zonama i jednosmernim ulicama, bez blokiranja saobraćaja.",
+  },
+  {
+    name: "Dorćol",
+    desc: "Uske ulice, kapije i parking uz Dunav. Kolicima izvlačimo vozila iz tesnih mesta, bez oštećenja susednih automobila.",
+  },
+  {
+    name: "Čukarica",
+    desc: "Banovo brdo, Čukarička padina i Ada Ciganlija. Šlep na strmim ulicama i u letnjim gužvama.",
+  },
+  {
+    name: "Mirijevo",
+    desc: "Mirijevo 1, 2, 3 i 4. Brza pomoć kada auto ne upali u ranu zoru i kvar na Mirijevskom bulevaru.",
+  },
+  {
+    name: "Savski venac",
+    desc: "Senjak, Topčider i Bulevar vojvode Mišića. Platforma za osetljiva vozila i brz dolazak na prometne pravce.",
+  },
+  {
+    name: "Vračar",
+    desc: "Zonsko parkiranje i uske ulice u centru. Izvlačimo vozila iz tesnih mesta i podzemnih garaža bez oštećenja.",
+  },
 ];
 
 export default function ServiceArea() {
@@ -75,18 +125,30 @@ export default function ServiceArea() {
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-12">
-          {areas.map(({ name, desc }) => (
-            <div
-              key={name}
-              className="border-2 border-primary/15 rounded-2xl p-5 hover:border-accent hover:shadow-md transition-all"
-            >
-              <h3 className="font-black text-primary text-lg mb-2">
-                Šlep služba {name}
-              </h3>
-              <p className="text-primary/60 text-sm leading-relaxed">{desc}</p>
-            </div>
-          ))}
+          {areas.map(({ name, desc }) => {
+            const page = pageAreas.find((a) => a.name === name);
+            const card = (
+              <>
+                <h3 className="font-black text-primary text-lg mb-2">
+                  Šlep služba {name}
+                </h3>
+                <p className="text-primary/60 text-sm leading-relaxed">{desc}</p>
+              </>
+            );
+            const cls =
+              "block border-2 border-primary/15 rounded-2xl p-5 hover:border-accent hover:shadow-md transition-all";
+            return page ? (
+              <Link key={name} href={areaPath(page.slug)} className={cls}>
+                {card}
+              </Link>
+            ) : (
+              <div key={name} className={cls}>
+                {card}
+              </div>
+            );
+          })}
         </div>
+
 
         <div className="bg-primary rounded-2xl p-8 text-center">
           <p className="text-accent font-bold text-lg mb-1">

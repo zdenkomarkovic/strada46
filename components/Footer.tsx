@@ -17,8 +17,14 @@ const navLinks = [
 ];
 
 const serviceLinks = [
-  { href: "/paljenje-akumulatora-beograd", label: "Paljenje akumulatora kablovima" },
+  { href: "/slep-vozila-beograd", label: "Šlep vozila" },
+  { href: "/deblokada-izvlacenje-vozila-beograd", label: "Deblokada i izvlačenje" },
+  { href: "/paljenje-akumulatora-beograd", label: "Paljenje vozila kablovima" },
   { href: "/dostava-goriva-beograd", label: "Donošenje goriva" },
+  { href: "/prevoz-vozila-beograd", label: "Prevoz vozila na adresu" },
+  { href: "/slepovanje-posle-udesa-beograd", label: "Šlepovanje posle udesa" },
+  { href: "/odvoz-vozila-do-servisa-beograd", label: "Odvoz do servisa" },
+  { href: "/prevoz-vozila-na-duze-relacije", label: "Prevoz na duže relacije" },
   { href: "/#usluge", label: "Sve usluge" },
 ];
 

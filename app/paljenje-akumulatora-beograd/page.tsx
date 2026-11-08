@@ -11,7 +11,7 @@ import Footer from "@/components/Footer";
 const PAGE_URL = `${SITE_URL}/paljenje-akumulatora-beograd`;
 
 export const metadata = buildMetadata({
-  title: "Paljenje Akumulatora Kablovima Beograd",
+  title: "Paljenje Vozila Kablovima Beograd",
   description:
     "Ostali ste bez akumulatora? Dolazimo za oko 30 minuta i palimo vozilo pomoćnim kablovima na licu mesta, bilo gde u Beogradu. Dostupni 24/7 — pozovite 064/9-200-200.",
   url: PAGE_URL,
@@ -53,7 +53,7 @@ const faqs = [
     a: "Da, dostupni smo 24 sata dnevno, 7 dana u nedelji, uključujući praznike. Kvar akumulatora ne bira vreme, ni mi ne biramo kada dolazimo.",
   },
   {
-    q: "Koliko košta usluga paljenja akumulatora?",
+    q: "Koliko košta usluga paljenja vozila?",
     a: "Cena zavisi od lokacije i vremena dolaska. Pozovite nas na 064/9-200-200 za brzu i besplatnu procenu cene, bez skrivenih troškova.",
   },
 ];
@@ -63,8 +63,8 @@ const serviceSchema = {
   "@graph": [
     {
       "@type": "Service",
-      serviceType: "Paljenje akumulatora kablovima",
-      name: "Paljenje akumulatora kablovima Beograd",
+      serviceType: "Paljenje vozila kablovima",
+      name: "Paljenje vozila kablovima Beograd",
       description:
         "Hitna pomoć na putu — paljenje ispražnjenog akumulatora pomoćnim kablovima na licu mesta, bilo gde u Beogradu, 24/7.",
       provider: {
@@ -83,7 +83,7 @@ const serviceSchema = {
         {
           "@type": "ListItem",
           position: 2,
-          name: "Paljenje akumulatora kablovima",
+          name: "Paljenje vozila kablovima",
           item: PAGE_URL,
         },
       ],
@@ -100,19 +100,19 @@ export default function PaljenjeAkumulatoraPage() {
       />
       <Header />
       <main>
-        <Breadcrumbs current="Paljenje akumulatora kablovima" />
+        <Breadcrumbs current="Paljenje vozila kablovima" />
         <ServiceHero
           eyebrow="Dostupni 24 sata, 7 dana u nedelji"
           title={
             <>
-              PALJENJE AKUMULATORA
+              PALJENJE VOZILA
               <br />
               <span className="text-accent">KABLOVIMA</span>
             </>
           }
           subtitle="Vozilo neće da upali? Dolazimo na lice mesta, bilo gde u Beogradu, i startujemo akumulator pomoćnim kablovima za nekoliko minuta."
           image="/20240131_215459-1024x576.jpg"
-          imageAlt="Paljenje akumulatora kablovima Strada 46"
+          imageAlt="Paljenje vozila kablovima Strada 46"
         />
 
         <section className="py-24 bg-white">
@@ -122,7 +122,7 @@ export default function PaljenjeAkumulatoraPage() {
                 Kada je potrebno
               </span>
               <h2 className="text-3xl md:text-4xl font-black text-primary mt-3 mb-6">
-                Kada vam je potrebno paljenje akumulatora?
+                Kada vam je potrebno paljenje vozila?
               </h2>
               <p className="text-primary/70 text-lg leading-relaxed mb-8">
                 Ispražnjen akumulator je jedan od najčešćih razloga zašto vozilo odbija da upali,
@@ -141,7 +141,7 @@ export default function PaljenjeAkumulatoraPage() {
               </h2>
               <p className="text-primary/70 text-lg leading-relaxed">
                 Pozovete nas na {PHONE}, kažete nam gde se tačno nalazite, i naš vozač kreće odmah
-                sa opremom za paljenje akumulatora. Pomoćnim kablovima i profesionalnim starterima
+                sa opremom za paljenje vozila. Pomoćnim kablovima i profesionalnim starterima
                 pokrećemo vaše vozilo bez rizika po njegovu elektroniku. U velikoj većini slučajeva
                 vozilo je spremno za dalju vožnju za samo nekoliko minuta — bez potrebe za šlepom
                 ili odlaskom u servis.
@@ -153,7 +153,7 @@ export default function PaljenjeAkumulatoraPage() {
                 Zašto Strada 46
               </span>
               <h2 className="text-3xl md:text-4xl font-black text-primary mt-3 mb-6">
-                Zašto izabrati nas za paljenje akumulatora
+                Zašto izabrati nas za paljenje vozila
               </h2>
               <CheckList items={benefits} />
             </div>
